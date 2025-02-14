@@ -1,0 +1,5 @@
+compose.yaml
+Dockerfile
+.dockerignore
+.gitignore
+pipelines/**
