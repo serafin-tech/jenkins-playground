@@ -1,10 +1,18 @@
 pipeline {
     agent any
-
+    options {
+        // This is required if you want to clean before build
+        skipDefaultCheckout(true)
+    }
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', changelog: false, url: 'https://github.com/serafin-tech/python-scripts'
+                cleanWs()
+            }
+            steps {
+                dir('python-scripts') {
+                    git branch: 'main', changelog: false, url: 'https://github.com/serafin-tech/python-scripts'
+                }
             }
         }
 
