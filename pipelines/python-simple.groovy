@@ -8,8 +8,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 cleanWs()
-            }
-            steps {
+
                 dir('python-scripts') {
                     git branch: 'main', changelog: false, url: 'https://github.com/serafin-tech/python-scripts'
                 }
