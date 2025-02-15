@@ -9,7 +9,8 @@ pipeline {
                 ])
             }
         }
-        stage('Hello') {
+
+        stage('Build') {
             steps {
                 dir('python-scripts') {
                     sh 'ls -l'
@@ -17,9 +18,9 @@ pipeline {
                         sh '''
                             python3.11 -m pip install -U pip
                             python3.11 -m pip install -U -r requirements.txt
-            
+
                             python3.11 -m pip install -U build setuptools setuptools-scm
-            
+
                             python3.11 -m build .
                         '''
                     }
