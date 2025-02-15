@@ -20,11 +20,6 @@ pipeline {
                 dir('python-scripts') {
                     withPythonEnv('python3.11') {
                         sh '''
-                            echo "---------------------------------"
-                            pwd
-                            ls -la
-                            echo "---------------------------------"
-
                             python3.11 -m pip install -U pip
                             python3.11 -m pip install -U -r requirements.txt
 
