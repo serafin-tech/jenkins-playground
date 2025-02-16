@@ -1,0 +1,156 @@
+---
+jenkins:
+  authorizationStrategy:
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: false
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: false
+  disableRememberMe: false
+  disabledAdministrativeMonitors:
+    - "jenkins.diagnostics.ControllerExecutorsNoAgents"
+  labelAtoms:
+    - name: "built-in"
+  markupFormatter: "plainText"
+  mode: NORMAL
+  myViewsTabBar: "standard"
+  nodeMonitors:
+    - "architecture"
+    - "clock"
+    - diskSpace:
+        freeSpaceThreshold: "1GiB"
+        freeSpaceWarningThreshold: "2GiB"
+    - "swapSpace"
+    - tmpSpace:
+        freeSpaceThreshold: "1GiB"
+        freeSpaceWarningThreshold: "2GiB"
+    - "responseTime"
+  numExecutors: 2
+  primaryView:
+    all:
+      name: "all"
+  projectNamingStrategy: "standard"
+  quietPeriod: 5
+  remotingSecurity:
+    enabled: true
+  scmCheckoutRetryCount: 0
+  securityRealm:
+    local:
+      allowsSignup: false
+      enableCaptcha: false
+      users:
+        - id: "serafin"
+          name: "Ser@fin"
+  slaveAgentPort: 50000
+  updateCenter:
+    sites:
+      - id: "default"
+        url: "https://updates.jenkins.io/update-center.json"
+  views:
+    - all:
+        name: "all"
+  viewsTabBar: "standard"
+globalCredentialsConfiguration:
+  configuration:
+    providerFilter: "none"
+    typeFilter: "none"
+appearance:
+  pipelineGraphView:
+    showGraphOnBuildPage: false
+    showGraphOnJobPage: false
+  prism:
+    theme: PRISM
+  themeManager:
+    disableUserThemes: false
+security:
+  apiToken:
+    creationOfLegacyTokenEnabled: false
+    tokenGenerationOnCreationEnabled: false
+    usageStatisticsEnabled: true
+  cps:
+    hideSandbox: false
+  gitHooks:
+    allowedOnAgents: false
+    allowedOnController: false
+  gitHostKeyVerificationConfiguration:
+    sshHostKeyVerificationStrategy: "knownHostsFileVerificationStrategy"
+  sSHD:
+    port: -1
+  scriptApproval:
+    approvedScriptHashes:
+      - "SHA512:05397b51c22cdbe851ef91e0b12806447fa3dfdaf4fd4846ac1c9642be8de1b4944592d7ee3d6ea845c69e07d703caa217067c649e231c2dda5b7ed9bae8acb1"
+      - "SHA512:104f935faf15c48256435ca73c3b41f5eefc26b2c9ba402aa81e3d5ca08e23e2a9ad33d8a421e6309314e233ea3b1674984a971ab6d52ee8d548c7221b8c6778"
+      - "SHA512:2f7159dc04f3f5833bdf885ee9c96bc712e363fed0bbe30729ea2dbb66da0f05093eac161da7c5b29cd4ac50d65e10ee672de899c586913f061d44156f85cfcb"
+      - "SHA512:4583fbd7e9dca7b99db0a0bcfaccb93fb6ff054fc1354c808f893b0461a87b0705dfd340a638bdfbf9f0e39aa151d6a54c3df45765fdb47302c2865860f73164"
+      - "SHA512:51c4fa2c47cd8f3831bf2bd374210707d4062befa43619e49fbcbb820dff157d7816dd78b8d91d13e7ed4033456be49f9f59f51ecc09101900ce55921ce7ce17"
+      - "SHA512:9359c0b0226c5d12b77e579bb5e673b3cf8c8636b3e4f8bedbe2e781962494e83149c7dd60e11941eed87d3571c499ae6dfd2db5c57eb56dc2cb398713ef78b0"
+      - "SHA512:b0fcc9aad147ee379b3fba6a228f0806d9b2db4806806aac0168b92646604d241d19cbe5e62907d1c724cca28b4324170fc91458e17dc00e3fd82c36ee93c2c4"
+      - "SHA512:f48502c078fe50b15bac419f96e9ce0d191aecbfc43cc4f1c1884240f8513dcd22f5c03970e983f4d9ec2c512ef7e24532db5c73949b00a5adc0e72e742b4a30"
+      - "SHA512:f79bc919e5260c10d11d406a155441e6283539ca1b0e84f2501d737d464084431b213b0f344d40ec8a39ea6b393b62e0ce4c31bdaf75c179dac504e5c57ba4c5"
+      - "SHA512:fa0843e5cf7eb927ac0cf293b231fd193440956a0014d316bd61ec1f41105c6c214feca3081969eada6dcd6148d5494f82a66ec6bbd88d0e5c81f42835ac2609"
+    forceSandbox: false
+unclassified:
+  buildDiscarders:
+    configuredBuildDiscarders:
+      - "jobBuildDiscarder"
+  buildStepOperation:
+    enabled: false
+  fingerprints:
+    fingerprintCleanupDisabled: false
+    storage: "file"
+  gitHubConfiguration:
+    apiRateLimitChecker: ThrottleForNormalize
+  gitHubPluginConfig:
+    hookUrl: "http://localhost:8080/github-webhook/"
+  globalTimeOutConfiguration:
+    operations:
+      - "abortOperation"
+    overwriteable: false
+  junitTestResultStorage:
+    storage: "file"
+  location:
+    adminAddress: "address not configured yet <nobody@nowhere>"
+    url: "http://localhost:8080/"
+  mailer:
+    charset: "UTF-8"
+    useSsl: false
+    useTls: false
+  pollSCM:
+    pollingThreadCount: 10
+  scmGit:
+    addGitTagAction: false
+    allowSecondFetch: false
+    createAccountBasedOnEmail: false
+    disableGitToolChooser: false
+    hideCredentials: false
+    showEntireCommitSummaryInChanges: false
+    useExistingAccountWithSameEmail: false
+  timestamper:
+    allPipelines: false
+    elapsedTimeFormat: "'<b>'HH:mm:ss.S'</b> '"
+    systemTimeFormat: "'<b>'HH:mm:ss'</b> '"
+tool:
+  git:
+    installations:
+      - home: "git"
+        name: "Default"
+jobs:
+  - script: |
+      folder('testjobs')
+  - script: |
+      job('testjobs/test-seed-job-2') {
+        steps {
+          shell('ls -l')
+        }
+      }
+  - script: |
+      job('testjobs/test-seed-job-from file') {
+        customWorkspace('/srv/jenkins/pipelines')
+        steps {
+          dsl {
+            external('python_simple_definition.groovy')
+            removeAction('DELETE')
+            ignoreExisting()
+          }
+        }
+      }

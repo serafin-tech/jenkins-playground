@@ -1,0 +1,7 @@
+blueocean
+config-file-provider
+configuration-as-code
+github
+job-dsl
+pyenv-pipeline
+ws-cleanup

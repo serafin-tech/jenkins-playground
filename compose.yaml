@@ -5,8 +5,11 @@ services:
     ports:
       - "127.0.0.1:8080:8080" # drop 127.0.0.1: if you want remote access to Jenkins
     volumes:
-      - ./.jenkins_home:/var/jenkins_home # persist data across container recreation, updating image, etc
+      - ./.jenkins_home:/var/jenkins_home:rw
       - ./pipelines:/srv/jenkins/pipelines:ro
+      - ./jenkins.yaml:/srv/jenkins/casc_configs/jenkins.yaml:ro
+    environment:
+      - CASC_JENKINS_CONFIG=/srv/jenkins/casc_configs/jenkins.yaml
     networks:
       - jenkins-net
     restart: unless-stopped
